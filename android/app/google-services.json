@@ -1,0 +1,124 @@
+{
+  "project_info": {
+    "project_number": "957567592340",
+    "project_id": "school-11e17",
+    "storage_bucket": "school-11e17.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957567592340:android:a739e66ee70106f6c05181",
+        "android_client_info": {
+          "package_name": "com.dbs.ntpl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeTGRfKUsfpBKFsoa1psb4CxlwyUP94So"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957567592340:android:1bdd55d8e2825767c05181",
+        "android_client_info": {
+          "package_name": "com.dbs_employee.ntpl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeTGRfKUsfpBKFsoa1psb4CxlwyUP94So"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957567592340:android:8d3f1a8a470c91dac05181",
+        "android_client_info": {
+          "package_name": "com.dbs_teacher.ntpl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeTGRfKUsfpBKFsoa1psb4CxlwyUP94So"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957567592340:android:86453b69f4b90799c05181",
+        "android_client_info": {
+          "package_name": "com.dfg.ntpl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeTGRfKUsfpBKFsoa1psb4CxlwyUP94So"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957567592340:android:7ff51cd6fa3785e5c05181",
+        "android_client_info": {
+          "package_name": "com.schoolmanagement.app.school_new"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeTGRfKUsfpBKFsoa1psb4CxlwyUP94So"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957567592340:android:4a0e62169d398779c05181",
+        "android_client_info": {
+          "package_name": "com.vgm.ntpl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeTGRfKUsfpBKFsoa1psb4CxlwyUP94So"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
