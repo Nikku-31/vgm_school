@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
 import '../AppManager/ViewModel/HomeWorkVM/hw_viewm.dart';
 import '../core/constants/app_colors.dart';
+import '../AppManager/ViewModel/AccountVM/student_details_view_model.dart';
 
 class HomeWork extends StatefulWidget {
   const HomeWork({super.key});
@@ -20,12 +21,23 @@ class _HomeWorkState extends State<HomeWork> {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      Provider.of<HwViewModel>(context, listen: false).getHomework(
-        classId: 1,
-        sectionId: 1,
-        date: DateTime.now().toIso8601String(),
-      );
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      final studentVM =
+      Provider.of<StudentDetailViewModel>(context, listen: false);
+
+      // Agar student details load nahi hui hain to pehle load karo
+      if (studentVM.student == null) {
+        await studentVM.getStudentDetails();
+      }
+
+      if (studentVM.student != null) {
+        Provider.of<HwViewModel>(context, listen: false).getHomework(
+          classId: studentVM.student!.classId,
+          sectionId: studentVM.student!.sectionId,
+          date:
+          "${DateTime.now().year}-${DateTime.now().month.toString().padLeft(2, '0')}-${DateTime.now().day.toString().padLeft(2, '0')}",
+        );
+      }
     });
   }
   String getMonthName(int month) {
@@ -57,7 +69,7 @@ class _HomeWorkState extends State<HomeWork> {
             ),
             flexibleSpace: Container(
               decoration: const BoxDecoration(
-                color: AppColors.primary
+                  color: AppColors.primary
               ),
             ),
           ),
@@ -118,11 +130,17 @@ class _HomeWorkState extends State<HomeWork> {
                       _selectedDay = selectedDay;
                       _focusedDay = focusedDay;
                     });
-                    //api call
+
+                    final studentVM =
+                    Provider.of<StudentDetailViewModel>(context, listen: false);
+
+                    String formattedDate =
+                        "${selectedDay.year}-${selectedDay.month.toString().padLeft(2, '0')}-${selectedDay.day.toString().padLeft(2, '0')}";
+
                     Provider.of<HwViewModel>(context, listen: false).getHomework(
-                      classId: 1,
-                      sectionId: 1,
-                      date: selectedDay.toIso8601String(),
+                      classId: studentVM.student!.classId,
+                      sectionId: studentVM.student!.sectionId,
+                      date: formattedDate,
                     );
                   },
                   calendarStyle:  CalendarStyle(

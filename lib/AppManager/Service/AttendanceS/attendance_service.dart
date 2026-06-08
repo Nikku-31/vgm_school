@@ -1,11 +1,13 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import '../../../core/constants/api_constants.dart';
 import '../../Model/AttendanceM/attendance_model.dart';
 
 class AttendanceService {
   Future<AttendanceModel?> getAttendance(int studentId, String date) async {
     try {
-      final String url = "https://vgm.online-tech.in/api/StudentApi/GetStudentAttendance?studentId=$studentId&date=$date";
+      final String url =
+          "${ApiConstants.getStudentAttendance}?studentId=$studentId&date=$date";
 
       final response = await http.get(Uri.parse(url));
 

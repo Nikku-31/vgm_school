@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import '../../../core/constants/api_constants.dart';
 import '../../Model/HomeWorkM/upcoming_classes_model.dart';
 
 class UpcomingClassesService {
@@ -9,7 +10,7 @@ class UpcomingClassesService {
 
     final response = await http.get(
       Uri.parse(
-        "https://vgm.online-tech.in/api/StudentApi/UpComingClassess?StudentId=$studentId",
+        "${ApiConstants.UpComingClassess}?StudentId=$studentId",
       ),
     );
 

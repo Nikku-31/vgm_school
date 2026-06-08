@@ -1,11 +1,12 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Feedback;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:school_new/core/constants/app_strings.dart';
 import 'package:school_new/screen/attendance_screen.dart';
 import 'package:school_new/screen/event.dart';
+import 'package:school_new/screen/feedback.dart' hide Feedback;
 import '../AppManager/Model/AccountM/send_login_model.dart';
 import '../AppManager/Service/NotificationS/notification_service.dart';
 import '../AppManager/ViewModel/AccountVM/send_login_viewModel.dart';
@@ -495,9 +496,24 @@ class _DashboardState extends State<Dashboard> {
                                               );
                                             },
                                           ),
+                                        if (isCardVisible(vm, "Feedback"))
+                                          menuCard(
+                                            CupertinoIcons.doc_text,
+                                            AppStrings.get(
+                                                context,
+                                                'Feedback'),
+                                            onTap: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                  const Event(),
+                                                ),
+                                              );
+                                            },
+                                          ),
                                       ],
                                     ),
-
                                     const SizedBox(height: 20),
 
                                     Row(
@@ -556,30 +572,7 @@ class _DashboardState extends State<Dashboard> {
                                         }
 
                                         if (vm.classes.isEmpty) {
-                                          return Container(
-                                            width: double.infinity,
-                                            padding: const EdgeInsets.symmetric(
-                                              vertical: 35,
-                                            ),
-                                            decoration: BoxDecoration(
-                                              color:AppColors.background,
-                                              border: Border.all(
-                                                color: AppColors.primary,
-                                                width: 1.5,
-                                              ),
-                                              borderRadius: BorderRadius.circular(20),
-                                            ),
-                                            child: Center(
-                                              child: Text(
-                                                "No Data Available",
-                                                style: GoogleFonts.poppins(
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: Colors.grey,
-                                                ),
-                                              ),
-                                            ),
-                                          );
+                                          return const SizedBox.shrink();
                                         }
 
                                         return ListView.builder(

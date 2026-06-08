@@ -1,6 +1,8 @@
 class StudentDetailModel {
   final int studentId;
   final String studentName;
+  final int classId;
+  final int sectionId;
   final String pickupTime;
   final String dropTime;
   final String schoolName;
@@ -18,6 +20,8 @@ class StudentDetailModel {
   StudentDetailModel({
     required this.studentId,
     required this.studentName,
+    required this.classId,
+    required this.sectionId,
     required this.pickupTime,
     required this.dropTime,
     required this.schoolName,
@@ -37,6 +41,8 @@ class StudentDetailModel {
     return StudentDetailModel(
       studentId: json['studentId'] ?? 0,
       studentName: json['studentName'] ?? '',
+      classId: json['classId'] ?? 0,
+      sectionId: json['sectionId'] ?? 0,
       pickupTime: json['pickupTime'] ?? '',
       dropTime: json['dropTime'] ?? '',
       schoolName: json['schoolName'] ?? '',
