@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:school_new/core/constants/app_strings.dart';
 import 'package:school_new/screen/attendance_screen.dart';
 import 'package:school_new/screen/event.dart';
-import 'package:school_new/screen/feedback.dart' hide Feedback;
+import 'package:school_new/screen/feed_back.dart';
 import '../AppManager/Model/AccountM/send_login_model.dart';
 import '../AppManager/Service/NotificationS/notification_service.dart';
 import '../AppManager/ViewModel/AccountVM/send_login_viewModel.dart';
@@ -507,7 +507,7 @@ class _DashboardState extends State<Dashboard> {
                                                 context,
                                                 MaterialPageRoute(
                                                   builder: (context) =>
-                                                  const Event(),
+                                                 const FeedBack(),
                                                 ),
                                               );
                                             },
