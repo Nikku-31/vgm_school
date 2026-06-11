@@ -14,6 +14,7 @@ import 'AppManager/ViewModel/AttendanceVM/attendance_vm.dart';
 import 'AppManager/ViewModel/AttendanceVM/student_attendance_vm.dart';
 import 'AppManager/ViewModel/DashboardVM/dashboard_vm.dart';
 import 'AppManager/ViewModel/EventVM/event_vm.dart';
+import 'AppManager/ViewModel/FeedbackVM/feedback_vm.dart';
 import 'AppManager/ViewModel/FeesVM/get_student_fee_view_model.dart';
 import 'AppManager/ViewModel/FeesVM/save_fee_view_model.dart';
 import 'AppManager/ViewModel/HomeWorkVM/hw_viewm.dart';
@@ -63,6 +64,7 @@ void main() async {
         ChangeNotifierProvider(create: (_) => DashboardVM(),),
         ChangeNotifierProvider(create: (_) => UpcomingClassesVM(),),
         ChangeNotifierProvider(create: (_) => EventViewModel(),),
+        ChangeNotifierProvider(create: (_) =>FeedbackViewModel()),
         ChangeNotifierProvider(create: (_) => LanguageProvider()..loadLanguage(),),
         
       ],
